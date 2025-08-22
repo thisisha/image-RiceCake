@@ -1,0 +1,2 @@
+[33m70961ca[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Fix security: Remove hardcoded API key, use environment variables
+[33m0a0dcd1[m Initial commit: RiceCake v2.0 with Vercel deployment setup
