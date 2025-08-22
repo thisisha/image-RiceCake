@@ -15,17 +15,18 @@ export class ImageService {
   private model: string;
 
   constructor() {
-    // OpenAI API 키를 직접 설정 (환경변수 문제 해결)
-    const apiKey = 'sk-proj-Z8HPSt_E9WpmFyCWhCaPvYtZ6j45fRVOsRzsAVYxtOPCqjuiSTXUGB5XiVDTnPLKy4FMCRi7tT3BlbkFJbjZMSbU9OUphRaE875tiK33uYyl9yW99F5Sgb7RKHYADlm5B7ROKEHnqeqXCLda4FcckAouJAA';
+    // 환경변수에서 OpenAI API 키 가져오기
+    const apiKey = process.env.OPENAI_API_KEY;
     
     if (apiKey) {
       this.openai = new OpenAI({
         apiKey: apiKey
       });
-      console.log('✅ OpenAI 클라이언트 초기화 완료 (직접 설정)');
+      console.log('✅ OpenAI 클라이언트 초기화 완료 (환경변수)');
     } else {
       this.openai = null;
       console.log('🔄 Mock 이미지 제공자 활성화 - OpenAI API 키 없음');
+      console.log('💡 .env 파일에 OPENAI_API_KEY를 설정하거나 Vercel 환경변수에 추가하세요');
     }
     
     this.model = 'dall-e-3';
