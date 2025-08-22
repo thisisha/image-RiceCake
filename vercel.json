@@ -27,9 +27,5 @@
       "dest": "/index.html"
     }
   ],
-  "functions": {
-    "src/backend/index.ts": {
-      "maxDuration": 30
-    }
-  }
+
 }
